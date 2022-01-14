@@ -12,3 +12,12 @@ const reverseList = (head) => {
 
 	return prev;
 }
+	
+// Recursive T: O(n) S: O(n)
+const recursiveReverseList = (head, prev = null) => {
+	if (head === null) return prev; 
+
+	const next = head.next;
+	head.next = prev; 
+	return recursiveReverseList(next, head);
+}
